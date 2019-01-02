@@ -30,7 +30,7 @@ pip 10.0.1 from /Users/kanziw/.pyenv/versions/3.7.1/lib/python3.7/site-packages/
 ## Run
 
 ```bash
-❯ python main.py
+❯ python -m myapp
 [2019-01-02 16:00:34 +0900] [18620] [INFO] Goin' Fast @ http://0.0.0.0:8000
 [2019-01-02 16:00:34 +0900] [18620] [INFO] Starting worker [18620]
 ```
