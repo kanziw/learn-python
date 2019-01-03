@@ -1,6 +1,6 @@
 from sanic import Sanic
 from sanic.log import logger
-from sanic.response import json, text
+from sanic.response import json, text, html
 
 from .config import config
 
@@ -65,6 +65,25 @@ def create_user(request):
     return text(
         "You are trying to create a user with the following POST: %s"
         % request.body
+    )
+
+
+@app.route('/text')
+def handle_request(request):
+    return text('Hello world!')
+
+
+@app.route('/html')
+def handle_request(request):
+    return html('<h1>Hello world!</h1>')
+
+
+@app.route('/json_extends')
+def handle_request(request):
+    return json(
+        {'message': 'Hello world!'},
+        headers={'X-Served-By': 'sanic'},
+        status=200
     )
 
 
