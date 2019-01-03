@@ -26,59 +26,7 @@
 			"response": []
 		},
 		{
-			"name": "/json",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"hello\": \"json\"\n}\n"
-				},
-				"url": {
-					"raw": "http://localhost:8000/json",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"json"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/query_string",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"hello\": \"json\"\n}\n"
-				},
-				"url": {
-					"raw": "http://localhost:8000/json",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"json"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/files",
+			"name": "/v1/req",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -87,13 +35,118 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8000/files",
+					"raw": "http://localhost:8000/v1/req",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
+						"v1",
+						"req"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/req/json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"hello\": \"json\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/req/json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"req",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/req/query_string",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/req/query_string?a=1&b=2&a=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"req",
+						"query_string"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "2"
+						},
+						{
+							"key": "a",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/req/files",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "test",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/req/files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"req",
 						"files"
 					]
 				}
@@ -101,7 +154,7 @@
 			"response": []
 		},
 		{
-			"name": "/form",
+			"name": "/v1/req/form",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -124,13 +177,15 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/form",
+					"raw": "http://localhost:8000/v1/req/form",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
+						"v1",
+						"req",
 						"form"
 					]
 				}
@@ -138,15 +193,15 @@
 			"response": []
 		},
 		{
-			"name": "/users",
+			"name": "/v1/req/users",
 			"request": {
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
@@ -154,13 +209,15 @@
 					"raw": "{\n\t\"message\": \"hello\"\n}\n"
 				},
 				"url": {
-					"raw": "http://localhost:8000/users",
+					"raw": "http://localhost:8000/v1/req/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
+						"v1",
+						"req",
 						"users"
 					]
 				}
@@ -168,7 +225,7 @@
 			"response": []
 		},
 		{
-			"name": "/text",
+			"name": "/v1/res",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -177,53 +234,89 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8000",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000"
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/html",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8000",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000"
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "/json_extends",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8000/json_extends",
+					"raw": "http://localhost:8000/v1/res",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
+						"v1",
+						"res"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/res/text",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/res/text",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"res",
+						"text"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/res/html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/res/html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"res",
+						"html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/res/json_extends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/res/json_extends",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"res",
 						"json_extends"
 					]
 				}
