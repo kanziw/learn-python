@@ -9,17 +9,17 @@ def index(request):
     return text(f"Hello, here is {request.url}")
 
 
-@bp.route('/text')
+@bp.get('/text')
 def handle_request(request):
     return text('Hello world!')
 
 
-@bp.route('/html')
+@bp.get('/html')
 def handle_request(request):
     return html('<h1>Hello world!</h1>')
 
 
-@bp.route('/json_extends')
+@bp.get('/json_extends')
 def handle_request(request):
     return json(
         {'message': 'Hello world!'},
